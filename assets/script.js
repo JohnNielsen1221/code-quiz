@@ -1,7 +1,7 @@
 var timerEl = document.getElementById('timer')
 var secondsLeft = 120;
 
-function startTimer() {
+function startQuiz() {
 
 }
 
