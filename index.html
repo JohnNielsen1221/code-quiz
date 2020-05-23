@@ -22,19 +22,21 @@
             Keep in mind that incorrect answers will penalize your score/time</br>
             by ten second!
         </p>
-        <button type='button' id='btn-start'>Start Quiz</button>
+        <button class='nrml-button' type='button' id='btn-start'>Start Quiz</button>
     </div>
     <!-- Quiz Container -->
-    <div class="grid d-none" id='quiz'>
+    <div id='quiz' class='d-none'>
         <div>
-            <h1 id='question'>QUESTION</h1>
-            <div class="buttons">
-                <button id="btn0"><span id="choice0"></span></button>
-                <button id="btn1"><span id="choice1"></span></button>
-                <button id="btn2"><span id="choice2"></span></button>
-                <button id="btn3"><span id="choice3"></span></button>
+            <div >
+                <h1 id="question">QUESTION</h1>
+                <ul id="answers">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <p class="feedback"></p>
             </div>
-            <p id='feedback'></p>
         </div>
     </div>
     <!-- Finished Quiz -->
