@@ -17,13 +17,13 @@ header {
     flex-wrap: wrap;
     justify-content: center;
 }
-h1 {
+.title {
     width: 100%;
     display:flex;
     justify-content: center;
     padding: 10px;
 }
-p {
+.intro {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -47,4 +47,19 @@ button:hover {
 }
 .d-none {
     display: none;
+}
+.feedback {
+    width: 100%;
+    border-top: 2px solid lightgrey;
+    font-size: 24px;
+    color: lightgrey;
+}
+.q-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 66%;
+    margin: 0 auto;
+}
+ul {
+    width: 100%;
 }
