@@ -45,3 +45,6 @@ button:hover {
     background-color: purple;
     cursor: pointer;
 }
+.d-none {
+    display: none;
+}
