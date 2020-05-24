@@ -39,7 +39,7 @@ header {
     font-size: 16px;
     border-radius: 7px;
 }
-button:hover {
+.nrml-button:hover {
     background-color: purple;
     cursor: pointer;
 }
@@ -52,15 +52,19 @@ button:hover {
     font-size: 24px;
     color: lightgrey;
 }
+.questions {
+    width: 100%;
+}
 .q-container {
     display: flex;
     flex-wrap: wrap;
     width: 66%;
     margin: 0 auto;
+    justify-content: left;
 }
-ul {
+/* ul {
     width: 100%;
-}
+} */
 .score-form {
     display: flex;
     justify-content: center;
@@ -74,4 +78,16 @@ input, label {
     margin: 15px;
     font-size: 24px;
 }
+.score-list {
+    width: 25%;
+    background-color: rgba(223, 188, 229, 0.6);
+    margin: 0 auto 35px auto;
+    text-align: center;
+    font-size: 32px;
 
+}
+.score-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

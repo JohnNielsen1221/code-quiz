@@ -71,7 +71,7 @@ function showQuestions() {
     var choices = questions[questionNumber].choices;
     
     for(var i = 0; i < choices.length; i++) {
-        var nextChoice = document.createElement('button');
+        var nextChoice = document.createElement('li', 'button');
 
         nextChoice.textContent = choices[i]
         answerBtn = answersEl.appendChild(nextChoice).setAttribute('class', 'nrml-button');
@@ -116,10 +116,9 @@ startBtn.addEventListener('click', startQuiz);
 submitBtn.addEventListener("click", function (event) {
     event.stopPropagation();
     addScore();
-    debugger;
     
     
-    window.location.href = './highscores.html'
+    window.location.href = 'highscores.html'
 });
 
 function addScore () {
