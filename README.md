@@ -30,8 +30,8 @@ You can then either go back to the start of the quiz to try again, or you will h
 Project is: _complete_ (for now)
 
 ## Links
-Live Page Link - https://johnnielsen1221.github.io/password-generator/
-Respository Link - https://github.com/JohnNielsen1221/password-generator
+Live Page Link - https://johnnielsen1221.github.io/code-quiz/
+Respository Link - https://github.com/JohnNielsen1221/code-quiz
 
 ## Contact
 Created by John Hayes Nielsen - johnhayesnielsen@gmail.com
