@@ -3,8 +3,13 @@ var secondsLeft = 120;
 var startBtn = document.getElementById('btn-start')
 var questionEl = document.getElementById('question');
 var answersEl = document.getElementById('answers');
+var userScoreEl = document.getElementById('user-score');
 var questionNumber = -1;
 var answer;
+var submitBtn = document.getElementById('submit-btn');
+var userNameInput;
+var submitScoreEl = document.querySelector('#final-score');
+var userScoreEl = document.getElementById('user-score');
 
 var questions = [
     {
@@ -49,9 +54,9 @@ function startTimer() {
         timerEl.textContent = 'Time: ' + secondsLeft;
         secondsLeft--;
 
-        if (secondsLeft === 0) {
-            timerEl.textContent = '';
+        if (secondsLeft === 0 || questionNumber === questions.length) {
             clearInterval(countdown);
+            setTimeout(endScore, 500);
         }
     }, 1000);    
 }
@@ -72,6 +77,12 @@ function showQuestions() {
         answerBtn = answersEl.appendChild(nextChoice).setAttribute('class', 'nrml-button');
     }
 };
+
+function endScore() {
+    document.getElementById('quiz').classList.add('d-none');
+    document.getElementById('final-score').classList.remove('d-none');
+    userScoreEl.textContent = 'Your score is ' + (secondsLeft+1) + '!';
+}
 
 function hideFeedback(){
     var feedbackEl = document.getElementsByClassName("feedback")[0]
@@ -102,5 +113,31 @@ answersEl.addEventListener("click", function (event) {
 });
 
 startBtn.addEventListener('click', startQuiz);
+submitBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    addScore();
+    debugger;
+    
+    
+    window.location.href = './highscores.html'
+});
+
+function addScore () {
+    userNameInput = document.getElementById("userInitials").value
+    
+    // create a new object with name and score keys
+var newScore = {
+        name: userNameInput,
+        score: secondsLeft
+    };
+    // check if there are scores in local storage first and take value
+    //if not, make a blank array
+    var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
+    // push object into score array
+    highScores.push(newScore)
+    // turn objects into an array of strings + put it into local storage
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+}
+
 
 
