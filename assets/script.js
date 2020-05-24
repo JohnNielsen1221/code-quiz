@@ -10,7 +10,7 @@ var submitBtn = document.getElementById('submit-btn');
 var userNameInput;
 var submitScoreEl = document.querySelector('#final-score');
 var userScoreEl = document.getElementById('user-score');
-
+// Quiz Questions
 var questions = [
     {
         title: 'Commonly used data types do NOT include:',
@@ -18,7 +18,7 @@ var questions = [
         answer: '3. alerts'
     },
     {
-        title: 'The condition in and if/else statement is enclosed with ______.',
+        title: 'The condition in an if/else statement is enclosed with ______.',
         choices: ['1. quotes', '2. curly brackets', '3. parenthesis', '4. square brackets'],
         answer: '3. parenthesis'
     },
@@ -28,7 +28,7 @@ var questions = [
         answer: '4. all of the above'
     },
     {
-        title: 'String values mist be enclosedd withing _____ when being assigned to variables.',
+        title: 'String values must be enclosed within _____ when being assigned to variables.',
         choices: ['1. commas', '2. curly brackets', '3. quotes', '4. parenthesis'],
         answer: '3. quotes'
     },
@@ -38,7 +38,7 @@ var questions = [
         answer: '4. console.log'
     },
 ];
-
+// Start the quiz with click
 function startQuiz() {
     document.getElementById('home-content').classList.add('d-none');
     document.getElementById('quiz').classList.remove('d-none');
@@ -47,8 +47,8 @@ function startQuiz() {
 
     showQuestions();
 
-}
-
+};
+// Populates and starts timer
 function startTimer() {
     var countdown =setInterval(function() {
         timerEl.textContent = 'Time: ' + secondsLeft;
@@ -59,8 +59,8 @@ function startTimer() {
             setTimeout(endScore, 500);
         }
     }, 1000);    
-}
-
+};
+// Populates questions from array
 function showQuestions() {
     questionNumber++;
     answer = questions[questionNumber].answer
@@ -77,23 +77,23 @@ function showQuestions() {
         answerBtn = answersEl.appendChild(nextChoice).setAttribute('class', 'nrml-button');
     }
 };
-
+// Produces quiz score
 function endScore() {
     document.getElementById('quiz').classList.add('d-none');
     document.getElementById('final-score').classList.remove('d-none');
     userScoreEl.textContent = 'Your score is ' + (secondsLeft+1) + '!';
-}
-
+};
+// Feedback functions
 function hideFeedback(){
     var feedbackEl = document.getElementsByClassName("feedback")[0]
     feedbackEl.style.display='none'
-}
+};
 
 function showFeedback(){
     var feedbackEl = document.getElementsByClassName("feedback")[0]
     feedbackEl.removeAttribute('style');
-}
-
+};
+// answer functions
 answersEl.addEventListener("click", function (event) {
     var feedbackEl = document.getElementsByClassName("feedback")[0]
     
@@ -111,7 +111,7 @@ answersEl.addEventListener("click", function (event) {
     }    
     showQuestions();
 });
-
+// Event listeners
 startBtn.addEventListener('click', startQuiz);
 submitBtn.addEventListener("click", function (event) {
     event.stopPropagation();
@@ -120,7 +120,7 @@ submitBtn.addEventListener("click", function (event) {
     
     window.location.href = 'highscores.html'
 });
-
+// Adding score to Highscores
 function addScore () {
     userNameInput = document.getElementById("userInitials").value
     
@@ -136,7 +136,7 @@ var newScore = {
     highScores.push(newScore)
     // turn objects into an array of strings + put it into local storage
     localStorage.setItem("highScores", JSON.stringify(highScores));
-}
+};
 
 
 
